@@ -1,74 +1,62 @@
-import styled from 'styled-components';
+import styled from 'styled-components/native';
 import { darken } from 'polished';
+import colors from '../../styles/colors';
 
-export const ProductList = styled.ul`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
-  list-style: none;
+export const Container = styled.view`
+  background: ${colors.dark};
+`;
 
-  li {
-    display: flex;
-    flex-direction: column;
-    background: #fff;
-    border-radius: 4px;
-    padding: 20px;
+export const Product = styled.view`
+  background: #fff;
+  padding: 10px;
+  margin: 15px;
+  border-radius: 4px;
+  width: 220px;
+`;
 
-    img {
-      align-self: center;
-      max-width: 250px;
-    }
+export const ProductImage = styled.Image`
+  height: 200px;
+  width: 200px;
+`;
 
-    /* > apenas dentro da li*/
-    > strong {
-      font-size: 16px;
-      line-height: 20px;
-      color: #333;
-      margin-top: 5px;
-    }
+export const ProductTitle = styled.Text`
+  font-size: 16px;
+`;
 
-    /* > apenas span dentro do li */
-    > span {
-      font-size: 21px;
-      font-weight: bold;
-      margin: 5px 0 20px;
-    }
+export const ProductPrice = styled.Text`
+  margin: 14px 0px;
+  font-size: 20px;
+  margin-bottom: 14px;
+  font-weight: bold;
+`;
 
-    button {
-      background: #7159c1;
-      color: #fff;
-      border: 0;
-      border-radius: 4px;
-      overflow: hidden;
+export const AddButton = styled.TouchableOpacity`
+  background: ${colors.primary};
+  flex-direction: row;
+  align-items: center;
+  border-radius: 4px;
+  margin-top: auto;
+`;
 
-      /* para alinhar todos os botoes*/
-      margin-top: auto;
+export const ProductAmount = styled.View`
+  padding: 12px;
+  background: ${darken(0.03, colors.primary)};
 
-      display: flex;
-      align-items: center;
-      transition: background 0.2s;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
 
-      &:hover {
-        background: ${darken(0.03, '#7159c1')};
-      }
+  flex-direction: row;
+  align-items: center;
+`;
 
-      div {
-        display: flex;
-        align-items: center;
-        padding: 12px;
-        background: rgba(0, 0, 0, 0.1);
+export const ProductAmountText = styled.Text`
+  color: #fff;
+  margin: 0px 4px 0px 10px;
+`;
 
-        svg {
-          margin-right: 5px;
-        }
-      }
-
-      /* titulo do botão */
-      span {
-        flex: 1;
-        text-align: center;
-        font-weight: bold;
-      }
-    }
-  }
+export const AddButtonText = styled.Text`
+  flex: 1;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
 `;
